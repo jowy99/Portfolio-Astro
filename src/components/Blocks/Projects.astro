@@ -1,0 +1,58 @@
+---
+import Titlehr from "../Basics/titlehr.astro";
+import H2 from "../Basics/h2.astro";
+import H4 from "../Basics/h4.astro";
+import P from "../Basics/p.astro";
+---
+
+<article class="w-full min-h-screen space-y-12 p-4 lg:mt-24">
+    <section class="flex-col space-y-8 h-1/4 w-full">
+        <H2 children="Mis proyectos"></H2>
+        <Titlehr/>
+    </section>
+
+    <main class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <article class="flex">
+            <a href="" class="group relative w-full h-full">
+                <div class="space-y-4 p-4">
+                    <img src="../../src/img/emotionsapp.png" alt="Imagen proyectos de desarrollo" class="w-full h-full rounded-md object-fill opacity-75 group-hover:opacity-100" loading="lazy">
+                    <H2 children="Emotions App"/>
+                    <P children="Aplicación sencilla para quienes tienen dificultades para expresarse cara a cara." />
+                </div>
+            </a>
+        </article>
+        <article class="flex">
+            <a href="" class="group relative w-full h-full">
+                <div class="space-y-4 p-4">
+                    <img src="../../src/img/fincasesmoli.png" alt="Imagen proyectos de desarrollo" class="w-full h-full rounded-md object-fill opacity-75 group-hover:opacity-100" loading="lazy">
+                    <H2 children="Fincas es Molí"/>
+                    <P children="Aplicación web para agencia inmobiliaria que permite visualizar, almacenar y gestionar propiedades aptas para la venta o alquiler." />
+                </div>
+            </a>
+        </article>
+        <article class="flex">
+            <a href="" class="group relative w-full h-full">
+                <div class="space-y-4 p-4">
+                    <img src="../../src/img/festivaldegranada.png" alt="Imagen proyectos de desarrollo" class="w-full h-full rounded-md object-fill opacity-75 group-hover:opacity-100" loading="lazy">
+                    <H2 children="Festival de Granada"/>
+                    <P children=`Un sencillo gestor de bases de datos realizado para la empresa "Granada Festival".` />
+                </div>
+            </a>
+        </article>
+        <article class="flex">
+            <a href="" class="group relative w-full h-full">
+                <div class="space-y-4 p-4">
+                    <img src="../../src/img/pythondatabase.png" alt="Imagen proyectos de desarrollo" class="w-full h-full rounded-md object-fill opacity-75 group-hover:opacity-100" loading="lazy">
+                    <H2 children="Gestor DB Python"/>
+                    <P children="Administrador de base de datos simple basado en Python sin interfaz de usuario (UI)." />
+                </div>
+            </a>
+        </article>
+    </main>
+
+    <section class="flex items-center justify-center">
+        <a href="">
+            <button class="px-4 py-2 shadow-md rounded-md bg-green-700 text-white">Ver mas</button>
+        </a>
+    </section>
+</article>
