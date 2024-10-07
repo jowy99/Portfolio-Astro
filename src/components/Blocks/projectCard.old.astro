@@ -1,0 +1,18 @@
+---
+import H2 from "../Basics/h2.astro";
+import P from "../Basics/p.astro";
+
+const { title, description, image, alt, redirection } = Astro.props;
+---
+
+<article class="flex border border-1 border-gray-900 rounded-md dark:border-white">
+    <a href=`${redirection}` class="group relative w-full h-full">
+        <div>
+            <img src=`${image}` alt=`${alt}` class="w-full h-full rounded-md object-fill opacity-75 group-hover:opacity-100" loading="lazy">
+            <div class="space-y-4 p-4">
+                <H2 children=`${title}`/>
+                <P children=`${description}` />
+            </div>
+        </div>
+    </a>
+</article>
