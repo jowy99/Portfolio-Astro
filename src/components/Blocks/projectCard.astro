@@ -1,59 +1,20 @@
 ---
-const { title, description, imageUrl, projectUrl, technologies } = Astro.props;
+const { title, description, imageUrl, technologies = [], projectUrl } = Astro.props;
 ---
 
-<article 
-  class="max-w-sm bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
-  itemscope 
-  itemtype="http://schema.org/CreativeWork"
->
-  <!-- Imagen del proyecto -->
-  <figure class="relative">
-    <img 
-      class="w-full h-48 object-cover" 
-      src={imageUrl} 
-      alt={`Captura del proyecto ${title}`} 
-      loading="lazy" 
-      itemprop="image"
-    />
-    <figcaption class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4">
-      <h2 class="text-lg text-white font-bold" itemprop="name">{title}</h2>
-    </figcaption>
-  </figure>
+<div class="max-w-sm bg-white rounded-lg shadow-lg overflow-hidden transform transition hover:scale-105 dark:bg-gray-800">
+  <img class="w-full h-48 object-cover" src={imageUrl} alt={`Imagen del proyecto ${title}`} />
 
-  <!-- Contenido de la tarjeta -->
-  <header class="px-6 py-4">
-    <p class="text-gray-700 dark:text-gray-400 text-base" itemprop="description">
-      {description}
-    </p>
-  </header>
+  <div class="p-6">
+    <h2 class="text-3xl font-bold mb-2 text-green-400">{title}</h2>
+    <p class="prose text-gray-600 mb-4 dark:text-gray-400">{description}</p>
 
-  <!-- Tecnologías utilizadas -->
-  <section class="px-6 py-2 flex flex-wrap space-x-2 items-center">
-    {technologies?.map(tech => (
-      <img
-        src={tech.icon} 
-        alt={`Icono de ${tech.name}`} 
-        class="h-8 w-8 object-contain" 
-        title={tech.name} 
-        loading="lazy" 
-        width="32" 
-        height="32"
-        itemprop="tool"
-      />
-    ))}
-  </section>
-
-  <!-- Footer con enlace al proyecto -->
-  <footer class="px-6 pt-4 pb-6">
-    <a 
-      href={projectUrl} 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      class="inline-block bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
-      itemprop="url"
-    >
-      Ver Proyecto
-    </a>
-  </footer>
-</article>
+    {projectUrl && (
+      <a href={projectUrl} target="_blank" class="inline-block bg-green-400 text-white px-4 py-2 rounded-md hover:bg-green-600 transition dark:bg-green-500">
+        <p class="font-medium text-sm">
+          Ver Proyecto
+        </p>
+      </a>
+    )}
+  </div>
+</div>

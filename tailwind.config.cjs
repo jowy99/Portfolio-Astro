@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import defaultTheme from 'tailwindcss/defaultTheme';
+import typography from 'tailwindcss/typography';
 
 module.exports = {
 	content: [
@@ -60,5 +61,7 @@ module.exports = {
             },
 		},
 	},
-	plugins: [],
+	plugins: [
+        'typography',
+    ],
 }
