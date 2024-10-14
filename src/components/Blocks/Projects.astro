@@ -1,24 +1,39 @@
 ---
 import Titlehr from "../Basics/titlehr.astro";
 import H2 from "../Basics/h2.astro";
-import H4 from "../Basics/h4.astro";
-import P from "../Basics/p.astro";
 import ProjectCard from "./projectCard.astro";
 ---
 
-<article class="w-full min-h-screen space-y-12 p-4 lg:mt-24">
-    <section class="flex-col space-y-8 h-1/4 w-full">
+<section class="flex flex-col justify-between w-full max-h-screen space-y-12 p-4 lg:mt-24">
+    <section class="space-y-8 h-1/4 w-full">
         <H2 children="Mis proyectos"></H2>
         <Titlehr/>
     </section>
 
-    <main class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+    <main class="h-full grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
         <ProjectCard
             title="Emotions App"
-            description="Aplicación sencilla para quienes tienen dificultades para expresarse cara a cara."
+            description="Desarrollo de una plataforma web similar a Twitter, diseñada para ayudar a los usuarios a expresar sus emociones de manera segura y confidencial. Implementación de sistemas avanzados de privacidad y gestión de datos sensibles, con enfoque en mejorar la experiencia de usuario. Proyecto en fase final de desarrollo."
             imageUrl="../../src/img/emotionsapp.png"
             projectUrl="https://github.com/jowy99/emotions"
-            technologies={['Laravel', 'TailwindCSS', 'MySQL']}
+        />
+        <ProjectCard
+            title="Fincas es Molí"
+            description="Colaboré en el desarrollo del frontend y la implementación del panel de administración para una inmobiliaria en Menorca. Contribuí a la creación de una interfaz intuitiva para la gestión de propiedades y clientes."
+            imageUrl="../../src/img/fincasesmoli.png"
+            projectUrl="https://fincasesmoli.com/es"
+        />
+        <ProjectCard
+            title="Festival de Granada"
+            description='Propuse y desarrollé mejoras en el sistema de base de datos de clientes durante mis prácticas, optimizando la gestión de datos y facilitando el acceso a la información. Este fue mi primer gran proyecto utilizando Laravel.'
+            imageUrl="../../src/img/festivaldegranada.png"
+            projectUrl="https://github.com/jowy99/FestivalDeGranada"
+        />
+        <ProjectCard
+            title="Gestor DB Python"
+            description="Desarrollé un gestor de base de datos en Python que permite la creación, consulta y modificación de registros de manera eficiente. Implementé funcionalidades para optimizar la gestión de datos, asegurando un acceso rápido y efectivo a la información. No dispone de GUI."
+            imageUrl="../../src/img/pythondatabase.png"
+            projectUrl="https://github.com/jowy99/Proyecto-Python-SQL"
         />
     </main>
 
@@ -27,4 +42,4 @@ import ProjectCard from "./projectCard.astro";
             <button class="inline-block bg-green-400 text-white px-4 py-2 rounded-md hover:bg-green-600 transition dark:bg-green-500">Ver más</button>
         </a>
     </section>
-</article>
+</section>
