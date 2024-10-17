@@ -1,5 +1,7 @@
 ---
-const { children, props } = Astro.props;
+const props = Astro.props;
 ---
 
-<p class={`${props} leading-5 font-md text-green_light-500`}>{children}</p>
+<p class={`${props} prose leading-5 font-md text-green_light-500`}>
+    <slot/>
+</p>
