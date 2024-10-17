@@ -4,14 +4,14 @@ import P from "../Basics/p.astro"
 import Button from "../Basics/button1.astro"
 ---
 
-<section class="w-full h-screen lg:flex">
-  <article class="lg:w-6/12 w-full h-full relative flex flex-col items-center justify-center">
+<section class="w-full h-screen min-h-screen lg:flex">
+  <article class="w-full h-full relative flex flex-col items-center justify-center">
     <div class="leading-5">
       <div>
         <H1>Joël</H1>
         <H1>Arnaud Carreras</H1>
       </div>
-      <div class="mx-32 mt-12 text-justify">
+      <div class="mx-12 mt-8 lg:mx-24 lg:mt-12 text-justify">
         <P>
           Soy un <span class="font-bold">desarrollador</span> de aplicaciones web con experiencia en Laravel y Astro. Mi enfoque está en crear soluciones innovadoras y eficientes, combinando creatividad y rendimiento. Actualmente, estoy desarrollando proyectos personales en GitHub y organizando mis estudios de programación para seguir mejorando. También me apasiona el marketing y la comunicación, habilidades que aplico para dar visibilidad a mis proyectos.
         </P>
@@ -26,7 +26,7 @@ import Button from "../Basics/button1.astro"
       </div>
     </div>
   </article>
-  <section class="hidden lg:block lg:w-6/12 lg:h-full bg-zinc-800">
-    <img src="/src/img/laptop.jpeg" alt="Ordenador portatil" class="w-full h-screen" loading="lazy" />
-  </section>
+  <div class="hidden w-full h-8/12 lg:w-8/12 lg:flex">
+    <img src="/src/img/joel.jpeg" alt="Joel" class="w-full h-full" />
+  </div>
 </section>
