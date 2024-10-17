@@ -1,56 +1,50 @@
 ---
+import Layout from "./../layouts/Layout.astro"
 import Hero from "../components/Blocks/Hero.astro";
 import Projects from "../components/Blocks/Projects.astro";
 import H1 from "../components/Basics/h1.astro";
 import H2 from "../components/Basics/h2.astro";
 import P from "../components/Basics/p.astro";
-import Footer from "../components/Blocks/footer.astro";
+import Titlehr from "../components/Basics/titlehr.astro";
+import { getCollection } from "astro:content";
+import ProjectCard from "../components/Blocks/projectCard.astro";
+import Button1 from "../components/Basics/button1.astro";
+
+const projects = await getCollection("projects");
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<Layout title="Joel Arnaud - Programador">
+  <Hero/>
 
-    <meta name="description" content="Portafolio de Joel Arnaud">
+  <section class="flex flex-col justify-between w-full max-h-screen space-y-12 p-4 lg:mt-24">
+    <section class="space-y-8 h-1/4 w-full">
+        <H2 children="Mis proyectos"></H2>
+        <Titlehr/>
+    </section>
 
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://joelarnaud.com/en/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Joël Arnaud Carreras">
-    <meta property="og:description" content="Portafolio de Joel Arnaud">
-    <meta property="og:image" content="../src/img/joel.jpeg">
+    <main class="h-full grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+      {
+        projects.map(project => {
+          const { slug, data } = project;
+          const { title, imageUrl, projectUrl } = data;
+          return (
+              <ProjectCard
+                title={title}
+                description={data.description}
+                imageUrl={imageUrl}
+                projectUrl={projectUrl}
+                url={`/proyectos/${slug}`}
+              ></ProjectCard>
+          )
+        })
+      }
+    </main>
 
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="joelarnaud.com">
-    <meta property="twitter:url" content="https://joelarnaud.com/en/">
-    <meta name="twitter:title" content="Joël Arnaud Carreras">
-    <meta name="twitter:description" content="Portafolio de Joel Arnaud">
-    <meta name="twitter:image" content="../src/img/joel.jpeg">
-
-    <!-- FavIcon -->
-    <link rel="shortcut icon" href="../src/img/Sagilogo.jpg" type="image/x-icon">
-    <link rel="icon" sizes="57x57" href="../src/img/57x57.png" type="image/x-icon">
-    <link rel="icon" sizes="120x120" href="../src/img/120x120.png" type="image/x-icon">
-    <link rel="icon" sizes="128x128" href="../src/img/128x128.png" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="150x150" href="../src/img/150x150.jpg" type="image/x-icon">
-    <link rel="icon" sizes="167x167" href="../src/img/167x167.jpg" type="image/x-icon">
-    <link rel="icon" sizes="192x192" href="../src/img/192x192.jpg" type="image/x-icon">
-    <link rel="icon" sizes="196x196" href="../src/img/196x196.jpg" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="228x228" href="../src/img/228x228.jpg" type="image/x-icon">
-
-    <!-- Bunny Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=acme:400|albert-sans:100,200,300,400,500,600,700,800|montserrat:300,400,500,600,700" rel="stylesheet" />
-    
-    <title>Joel Arnaud - Programador</title>
-  </head>
-  <body class="font-AlbertSans antialiased dark:bg-zinc-800">
-    <Hero/>
-    
-    <Projects/>
-
-    <Footer/>
-  </body>
-</html>
+    <section class="flex items-center justify-center">
+        <a href="">
+            <Button1>Ver más</Button1>
+        </a>
+    </section>
+</section>
+  
+</Layout>

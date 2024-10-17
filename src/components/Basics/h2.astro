@@ -1,5 +1,7 @@
 ---
-const {children, props} = Astro.props;
+const {props} = Astro.props;
 ---
 
-<h2 class={`${props} capitalize font-bold text-green-400 dark:text-green_light-600 text-4xl text-center lg:text-6xl`}>{children}</h2>
+<h2 class={`${props} capitalize font-bold text-green-400 dark:text-green_light-600 text-4xl text-center lg:text-6xl`}>
+    <slot/>
+</h2>
