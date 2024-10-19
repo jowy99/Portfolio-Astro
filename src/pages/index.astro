@@ -1,50 +1,10 @@
 ---
 import Layout from "./../layouts/Layout.astro"
 import Hero from "../components/Blocks/Hero.astro";
-import Projects from "../components/Blocks/Projects.astro";
-import H1 from "../components/Basics/h1.astro";
-import H2 from "../components/Basics/h2.astro";
-import P from "../components/Basics/p.astro";
-import Titlehr from "../components/Basics/titlehr.astro";
-import { getCollection } from "astro:content";
-import ProjectCard from "../components/Blocks/projectCard.astro";
-import Button1 from "../components/Basics/button1.astro";
-
-const projects = await getCollection("projects");
+import Projects from "./../components/Blocks/projectSection.astro";
 ---
 
 <Layout title="Joel Arnaud - Programador">
   <Hero/>
-
-  <section class="flex flex-col justify-between w-full max-h-screen space-y-12 p-4 lg:mt-24">
-    <section class="space-y-8 h-1/4 w-full">
-        <H2>Mis proyectos</H2>
-        <Titlehr/>
-    </section>
-
-    <main class="h-full grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-      {
-        projects.map(project => {
-          const { slug, data } = project;
-          const { title, imageUrl, projectUrl } = data;
-          return (
-              <ProjectCard
-                title={title}
-                description={data.description}
-                imageUrl={imageUrl}
-                projectUrl={projectUrl}
-                url={`/proyectos/${slug}`}
-              ></ProjectCard>
-          )
-        })
-      }
-    </main>
-
-    <section class="flex items-center justify-center">
-        <a href="">
-            <Button1>Ver más</Button1>
-        </a>
-    </section>
-</section>
-  
+  <Projects/>
 </Layout>

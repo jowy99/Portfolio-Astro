@@ -162,6 +162,20 @@ declare module 'astro:content' {
   collection: "projects";
   data: any
 } & { render(): Render[".md"] };
+"juegodememoria.md": {
+	id: "juegodememoria.md";
+  slug: "juegodememoria";
+  body: string;
+  collection: "projects";
+  data: any
+} & { render(): Render[".md"] };
+"monopoly.md": {
+	id: "monopoly.md";
+  slug: "monopoly";
+  body: string;
+  collection: "projects";
+  data: any
+} & { render(): Render[".md"] };
 "pythondbgestor.md": {
 	id: "pythondbgestor.md";
   slug: "pythondbgestor";
