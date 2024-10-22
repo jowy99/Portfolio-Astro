@@ -1,0 +1,29 @@
+---
+import Layout from "./../layouts/Layout.astro"
+import Estudios from "../components/Blocks/estudios.astro"
+import Trabajo from "../components/Blocks/trabajo.astro"
+import H2 from "../components/Basics/h2.astro"
+import Titlehr from "../components/Basics/titlehr.astro"
+import ABTContainer from "../components/Blocks/imagetextContainer.astro"
+---
+
+<Layout title="Joel Arnaud - Programador">
+    <section class="-mt-4 w-full p-4 xl:mt-12">
+        <div class="flex-col space-y-8 h-1/5 w-full mb-12">
+            <a aria-label="Volver a la página anterior" onclick="window.history.back()" aria-label="Volver a proyectos" class="fixed top-4 left-4 p-2 bg-gray-800 rounded-full text-white hover:text-gray-300 focus:ring-2 focus:ring-offset-2 focus:ring-white z-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a> 
+            <H2>Sobre mí</H2>
+            <Titlehr/>
+        </div>
+
+        <ABTContainer imageUrl="/src/img/joel.jpeg" imageAlt="Home image.">
+            <Estudios/>
+        </ABTContainer>
+        <ABTContainer reverse={true} imageUrl="/src/img/joel.jpeg" imageAlt="Home image.">
+            <Trabajo/>
+        </ABTContainer>
+    </section>
+</Layout>

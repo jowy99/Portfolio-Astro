@@ -1,0 +1,27 @@
+---
+const { imageUrl, imageAlt, reverse } = Astro.props;
+---
+
+<section class="w-full h-screen min-h-screen p-4">
+    <section class="w-full h-4/5 max-h-screen lg:flex">
+        {reverse ? (
+            <>
+                <article class="w-full h-full space-y-16 flex flex-col items-center justify-center lg:w-7/12 lg:mr-12">
+                    <slot/>
+                </article>
+                <aside class="hidden lg:block lg:w-5/12 lg:h-full bg-zinc-800">
+                    <img src={imageUrl} alt={imageAlt} class="w-full h-full object-cover object-center" loading="lazy">
+                </aside>
+            </>
+        ) : (
+            <>
+                <aside class="hidden lg:block lg:w-5/12 lg:h-full bg-zinc-800">
+                    <img src={imageUrl} alt={imageAlt} class="w-full h-full object-cover object-center" loading="lazy">
+                </aside>
+                <article class="w-full h-full space-y-16 flex flex-col items-center justify-center lg:w-7/12 lg:ml-12">
+                    <slot/>
+                </article>
+            </>
+        )}
+    </section>
+</section>
