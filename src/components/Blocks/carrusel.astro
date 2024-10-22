@@ -1,0 +1,46 @@
+---
+import { useState } from 'astro/jsx-runtime';
+import Estudios from './estudios.astro';
+import Trabajo from './trabajo.astro';
+
+// Definimos los slides
+const slides = [
+  <Estudios />,
+  <Trabajo />
+];
+
+// Usamos useState para gestionar el índice del slide actual
+const [currentSlide, setCurrentSlide] = useState(0);
+
+// Función para avanzar al siguiente slide
+const nextSlide = () => {
+  setCurrentSlide((prev) => (prev + 1) % slides.length);
+};
+
+// Función para retroceder al slide anterior
+const prevSlide = () => {
+  setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+};
+---
+
+<div class="relative w-full h-full flex flex-col items-center justify-center">
+  <div class="w-full h-full">
+    {slides[currentSlide]}
+  </div>
+  <div class="absolute top-1/2 left-0 flex justify-between w-full transform -translate-y-1/2">
+    <button 
+      type="button" 
+      class="px-4 py-2 bg-gray-700 text-white" 
+      onClick={prevSlide}  // Directamente llamando la función
+    >
+      Anterior
+    </button>
+    <button 
+      type="button" 
+      class="px-4 py-2 bg-gray-700 text-white" 
+      onClick={nextSlide}  // Directamente llamando la función
+    >
+      Siguiente
+    </button>
+  </div>
+</div>
