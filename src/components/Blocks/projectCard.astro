@@ -3,9 +3,9 @@
 const { title, description, imageUrl, projectUrl, url } = Astro.props;
 ---
 
-<article class="max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 h-full">
+<article class="max-w-lg mx-auto rounded-lg shadow-xl overflow-hidden transition-transform transform hover:scale-105 h-full">
   <a href={url} class="group relative w-full h-full">
-      <img src={imageUrl} alt="Development projects image" class="w-full h-full rounded-md object-fill opacity-75 group-hover:opacity-100" loading="lazy">
+      <img src={imageUrl} alt="Development projects image" class="w-full h-full rounded-md object-fill dark:opacity-75 group-hover:opacity-100" loading="lazy">
       <section class="w-max absolute inset-0">
           <h4 class="p-2 text-sm rounded-br-md rounded-tl-md shadow-md text-white bg-green-600 dark:bg-green-800 md:text-md md:p-4 xl:text-xl">{title}</h4>
       </section>
