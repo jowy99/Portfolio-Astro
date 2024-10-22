@@ -1,0 +1,30 @@
+---
+import H2 from "../Basics/h2.astro"
+import Titlehr from "../Basics/titlehr.astro"
+import Button1 from "../Basics/button1.astro"
+---
+
+<article class="min-h-screen w-full mt-12 space-y-12">
+    <section class="flex-col space-y-8 h-1/4 w-full">
+        <H2>Contacto</H2>
+        <Titlehr/>
+    </section>
+
+    <!-- Contact Form -->
+    <article class="w-full h-4/5 max-h-screen flex items-center justify-center">
+        <form action="" method="post" class="w-full h-full space-y-16 flex flex-col items-center justify-center lg:w-8/12 lg:mr-12">
+            <div class="flex flex-col space-y-4">
+                <div class="space-y-4 lg:flex lg:space-x-4 lg:space-y-0">
+                    <input type="text" placeholder="Nombre" required="required" class="flex-1 min-w-0 drop-shadow-md block lg:text-md border-0 ring-1 ring-inset ring-carbon-300 w-full py-4 px-6 border-none rounded-md text-carbon-600 bg-gray-100 focus:ring-carbon-500 focus:ring-2">
+                    <input type="text" placeholder="Apellidos" required="required" class="flex-1 min-w-0 drop-shadow-md block lg:text-md border-0 ring-1 ring-inset ring-carbon-300 w-full py-4 px-6 border-none rounded-md text-carbon-600 bg-gray-100 focus:ring-carbon-500 focus:ring-2">
+                </div>
+                <input type="email" placeholder="Correo" required="required" class="flex-1 min-w-0 drop-shadow-md block lg:text-md border-0 ring-1 ring-inset ring-carbon-300 w-full py-4 px-6 border-none rounded-md text-carbon-600 bg-gray-100 focus:ring-carbon-500 focus:ring-2">
+                <textarea placeholder="Mensaje" class="w-full font-sans drop-shadow-md py-4 px-6 border-none text-carbon-600 bg-gray-100 focus:ring-2 mt-2 resize-y focus:ring-carbon-500 focus:shadow-md focus:border-carbon-500 rounded-md lg:text-md border-carbon-300"></textarea>
+            </div>
+            <div>
+                <Button1 type="submit">Enviar</Button1>
+            </div>
+        </form>
+    </article>
+
+</article>
