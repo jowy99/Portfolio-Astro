@@ -23,6 +23,7 @@ const limitedProjects = projects.slice(0, 4);
           const { title, imageUrl, projectUrl } = data;
           return (
               <ProjectCard
+                transition:name={`img-${slug}`}
                 title={title}
                 description={data.description}
                 imageUrl={imageUrl}

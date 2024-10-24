@@ -17,8 +17,8 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const { data } = project;
-const { title, description, imageUrl, projectUrl } = data;
+const { data, slug } = project;
+const { title, imageUrl, projectUrl } = data;
 
 const { Content } = await render(project);
 ---
@@ -31,7 +31,7 @@ const { Content } = await render(project);
             </svg>
         </a>        
         
-        <img src={imageUrl} alt="Development projects image" class="w-full h-80 object-cover object-center" loading="lazy">
+        <img transition:name={`img-${slug}`} src={imageUrl} alt="Development projects image" class="w-full h-80 object-cover object-center" loading="lazy">
 
         <div class="mx-4 my-4 inline-flex items-center space-x-2 rounded-full border-2 border-done px-2 py-1 shadow-md">
             <div class="w-2 h-2 bg-done rounded-full flex-shrink-0"></div>
