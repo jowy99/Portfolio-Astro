@@ -1,0 +1,7 @@
+---
+const {props} = Astro.props;
+---
+
+<h4 class={`${props} p-2 text-sm rounded-br-md rounded-tl-md shadow-md text-white bg-green-600 dark:bg-green-800 md:text-md md:p-4 xl:text-xl`}>
+    <slot/>
+</h4>
