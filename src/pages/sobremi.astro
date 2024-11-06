@@ -5,6 +5,7 @@ import Trabajo from "../components/Blocks/trabajo.astro"
 import H2 from "../components/Basics/h2.astro"
 import Titlehr from "../components/Basics/titlehr.astro"
 import ABTContainer from "../components/Blocks/imagetextContainer.astro"
+import joelimage from "../assets/images/joel.jpeg"
 ---
 
 <Layout title="Joel Arnaud - Programador">
@@ -19,10 +20,10 @@ import ABTContainer from "../components/Blocks/imagetextContainer.astro"
             <Titlehr/>
         </div>
 
-        <ABTContainer imageUrl="/src/img/joel.jpeg" imageAlt="Home image.">
+        <ABTContainer imageUrl={joelimage} imageAlt="Home image.">
             <Estudios/>
         </ABTContainer>
-        <ABTContainer reverse imageUrl="/src/img/joel.jpeg" imageAlt="Home image.">
+        <ABTContainer reverse imageUrl={joelimage} imageAlt="Home image.">
             <Trabajo/>
         </ABTContainer>
     </section>

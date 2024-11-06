@@ -2,6 +2,8 @@
 import H1 from "../Basics/h1.astro"
 import P from "../Basics/p.astro"
 import Button1 from "../Basics/button1.astro"
+import { Image } from "astro:assets"
+import joelimage from "../../assets/images/joel.jpeg"
 ---
 
 <section class="w-full h-screen min-h-screen lg:flex">
@@ -38,6 +40,6 @@ import Button1 from "../Basics/button1.astro"
     </div>
   </article>
   <aside class="hidden w-full h-8/12 lg:w-8/12 lg:flex">
-    <img src="/src/img/joel.jpeg" alt="Joel" class="w-full h-full" />
+    <Image src={joelimage} alt="Joel" class="w-full h-full" />
   </aside>
 </section>
