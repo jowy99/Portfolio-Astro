@@ -1,6 +1,10 @@
 ---
 import H3 from "../Basics/h3.astro"
 import P from "../Basics/p.astro"
+
+import ESPFlag from "../icons/espFlag.astro"
+import ENGFlag from "../icons/engFlag.astro"
+import Carnet from "../icons/carnet.astro"
 ---
 <section class="flex flex-col items-center justify-center space-y-8">
     <H3>Trabajos</H3>
@@ -37,17 +41,17 @@ import P from "../Basics/p.astro"
 <section class="flex flex-col items-center justify-center space-y-8 mt-8">
     <H3>observaciones</H3>
     <section class="flex-col space-y-8">
-        <div class="grid grid-cols-2 gap-6 items-center justify-between md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 2xl:gap-4">
-            <div class="flex space-x-4 bg-carbon-200 text-white py-2.5 px-4 rounded-md shadow-md dark:bg-carbon-500">
-                <x-fab-laravel class="w-6 h-6" />
+        <div class="grid grid-cols-2 gap-6 items-center justify-between sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 2xl:gap-4">
+            <div class="col-span-2 flex space-x-4 bg-carbon-200 text-white py-2.5 px-4 rounded-md shadow-md dark:bg-carbon-500">
+                <Carnet/>
                 <P class="capitalize text-white">Carnet de conducir B</P>
             </div>
             <div class="flex space-x-4 bg-carbon-200 text-white py-2.5 px-4 rounded-md shadow-md dark:bg-carbon-500">
-                <x-si-tailwindcss class="w-6 h-6" />
+                <ENGFlag/>
                 <P class="capitalize text-white">Inglés</P>
             </div>
             <div class="flex space-x-4 bg-carbon-200 text-white py-2.5 px-4 rounded-md shadow-md dark:bg-carbon-500">
-                <x-si-html5 class="w-6 h-6" />
+                <ESPFlag/>
                 <P class="capitalize text-white">Español</P>
             </div>
         </div>
