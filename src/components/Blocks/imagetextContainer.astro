@@ -2,24 +2,33 @@
 import { Image } from "astro:assets"
 const { imageUrl, imageAlt, reverse } = Astro.props;
 ---
-
-<section class="w-full h-screen min-h-screen p-4">
-    <section class="w-full h-4/5 max-h-screen lg:flex">
+<section class="w-full min-h-[400px] p-4 lg:h-auto">
+    <section class="flex flex-col lg:flex-row lg:gap-8">
         {reverse ? (
             <>
-                <article class="w-full h-full space-y-16 flex flex-col items-center justify-center lg:w-7/12 lg:mr-12">
+                <article class="w-full space-y-4 flex flex-col items-center justify-center lg:w-7/12 lg:mr-8">
                     <slot/>
                 </article>
-                <aside class="hidden lg:block lg:w-5/12 lg:h-full bg-zinc-800">
-                    <Image src={imageUrl} alt={imageAlt} class="w-full h-full object-cover object-center" loading="lazy" />
+                <aside class="hidden lg:block w-full h-auto bg-zinc-800 lg:w-5/12 lg:h-full">
+                    <Image 
+                        src={imageUrl} 
+                        alt={imageAlt} 
+                        class="w-full h-auto object-cover object-center" 
+                        loading="lazy" 
+                    />
                 </aside>
             </>
         ) : (
             <>
-                <aside class="hidden lg:block lg:w-5/12 lg:h-full bg-zinc-800">
-                    <Image src={imageUrl} alt={imageAlt} class="w-full h-full object-cover object-center" loading="lazy" />
+                <aside class="hidden lg:block w-full h-auto bg-zinc-800 lg:w-5/12 lg:h-full">
+                    <Image 
+                        src={imageUrl} 
+                        alt={imageAlt} 
+                        class="w-full h-auto object-cover object-center" 
+                        loading="lazy" 
+                    />
                 </aside>
-                <article class="w-full h-full space-y-16 flex flex-col items-center justify-center lg:w-7/12 lg:ml-12">
+                <article class="w-full space-y-4 flex flex-col items-center justify-center lg:w-7/12 lg:ml-8">
                     <slot/>
                 </article>
             </>
