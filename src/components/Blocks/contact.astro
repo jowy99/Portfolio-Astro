@@ -13,27 +13,6 @@ import laptopimage from "../../assets/images/laptop.jpeg"
         <H2>Contacto</H2>
         <Titlehr/>
     </section>
-
-    <!-- Contact Form -->
-    <!-- <article class="w-full h-4/5 min-h-screen flex items-center justify-center">
-        <aside class="hidden lg:block lg:w-full lg:h-full bg-zinc-800">
-            <img src="/src/img/sunsetGranada.jpg" alt="Imagen" class="w-full h-full object-cover object-center" loading="lazy">
-        </aside>
-        <form id="contact-form" action="./../../pages/api/send-email.js" method="post" class="w-full h-full space-y-16 flex flex-col items-center justify-center lg:w-8/12 lg:mr-12">
-            <H2>Envíanos un mensaje</H2>
-            <div class="flex flex-col space-y-4">
-                <div class="space-y-4 lg:flex lg:space-x-4 lg:space-y-0">
-                    <input type="text" name="name" placeholder="Nombre" required="required" class="flex-1 min-w-0 drop-shadow-md block lg:text-md border-0 ring-1 ring-inset ring-carbon-300 w-full py-4 px-6 border-none rounded-md text-carbon-600 bg-gray-100 focus:ring-carbon-500 focus:ring-2">
-                    <input type="text" name="lastname" placeholder="Apellidos" required="required" class="flex-1 min-w-0 drop-shadow-md block lg:text-md border-0 ring-1 ring-inset ring-carbon-300 w-full py-4 px-6 border-none rounded-md text-carbon-600 bg-gray-100 focus:ring-carbon-500 focus:ring-2">
-                </div>
-                <input type="email" name="email" placeholder="Correo" required="required" class="flex-1 min-w-0 drop-shadow-md block lg:text-md border-0 ring-1 ring-inset ring-carbon-300 w-full py-4 px-6 border-none rounded-md text-carbon-600 bg-gray-100 focus:ring-carbon-500 focus:ring-2">
-                <textarea name="message" placeholder="Mensaje" class="w-full font-sans drop-shadow-md py-4 px-6 border-none text-carbon-600 bg-gray-100 focus:ring-2 mt-2 resize-y focus:ring-carbon-500 focus:shadow-md focus:border-carbon-500 rounded-md lg:text-md border-carbon-300"></textarea>
-            </div>
-            <div>
-                <Button1 type="submit">Enviar</Button1>
-            </div>
-        </form>
-    </article> -->
     <div class="p-2 lg:flex lg:items-center lg:justify-center lg:mt-4">
         <div class="w-full h-full bg-green-500 dark:bg-green-800 dark:border-green-700 rounded-lg py-6 px-4 lg:w-8/12 lg:h-auto lg:rounded-lg lg:p-8">
             <div class="lg:flex lg:space-x-6">
@@ -44,12 +23,14 @@ import laptopimage from "../../assets/images/laptop.jpeg"
                 </aside>
     
                 <!-- Formulario de contacto -->
-                <section class="w-full flex flex-col items-center justify-center lg:w-8/12">
+                <section class="w-full flex flex-col items-center justify-center space-y-8 lg:w-8/12 lg:space-y-0">
                     <div class="flex flex-col items-center justify-center space-y-8">
-                        <H5>Envíanos un mensaje</H5>
-                        <P reverse>
-                            ¿Tienes alguna pregunta o comentario? ¡Escríbenos! Estamos aquí para ayudarte.
-                        </P>
+                        <H5>Envíame un mensaje</H5>
+                        <div class="px-4">
+                            <P>
+                                Actualmente estoy abierto a cualquier sugerencia o propuesta de trabajo, así que no dudes en ponerte en contacto conmigo.
+                            </P>
+                        </div>
                     </div>
                     <form id="contact-form" action="./../../pages/api/send-email.js" method="post" class="w-full h-full space-y-16 flex flex-col items-center justify-center lg:w-8/12">
                         <div class="flex flex-col space-y-4">
