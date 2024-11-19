@@ -4,6 +4,7 @@ const projectSchema = z.object({
     title: z.string(),
     imageUrl: z.string(),
     projectUrl: z.string().url(),
+    tools: z.array(z.string()).optional(),
     layout: z.string(),
 });
 

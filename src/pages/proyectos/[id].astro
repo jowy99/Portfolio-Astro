@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
+import ToolList from '../../components/Blocks/ToolList.astro';
 
 import H2 from "../../components/Basics/h2.astro";
 import P from "../../components/Basics/p.astro";
@@ -19,10 +20,11 @@ export async function getStaticPaths() {
 const { project } = Astro.props;
 const { data, slug } = project;
 const { title, imageUrl, projectUrl } = data;
+const tools = data.tools || [];
 
 const { Content } = await render(project);
+console.log('DATA:', data);
 ---
-
 <Layout title={title}>
     <main class="h-screen min-h-screen">
         <a aria-label="Volver a la página anterior" onclick="window.history.back()" aria-label="Volver a proyectos" class="fixed top-4 left-4 p-2 bg-gray-800 rounded-full text-white hover:text-gray-300 focus:ring-2 focus:ring-offset-2 focus:ring-white z-50">
@@ -49,10 +51,7 @@ const { Content } = await render(project);
             </div>
 
             <div class="flex space-x-4">
-                <P>Laravel</P>
-                <P>JS</P>
-                <P>Tailwind</P>
-                <P>MySQL</P>
+                <ToolList tools={tools} />
             </div>
 
             <a href={ projectUrl } target="_blank" rel="noopener noreferrer">

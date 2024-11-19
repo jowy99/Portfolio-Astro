@@ -1,0 +1,37 @@
+---
+import P from "../Basics/p.astro";
+const { tools } = Astro.props;
+
+// Cargar dinámicamente los componentes de íconos
+const icons = tools.length > 0
+  ? await Promise.all(
+      tools.map(async (tool) => {
+        try {
+          const Icon = await import(`../../components/icons/${tool}.astro`);
+          return { tool, Icon: Icon.default };
+        } catch (e) {
+          console.error(`No se pudo cargar el ícono para ${tool}:`, e);
+          return { tool, Icon: null };
+        }
+      })
+    )
+  : [];
+---
+<ul class="flex flex-wrap gap-4 justify-center items-center">
+  {icons.length > 0 ? (
+    icons.map(({ tool, Icon }) =>
+      Icon ? (
+        <li class="flex space-x-4 bg-carbon-200 text-white py-2.5 px-4 rounded-md shadow-md dark:bg-carbon-500">
+            <Icon/>
+            <P class="text-white">{tool.charAt(0).toUpperCase() + tool.slice(1).toLowerCase()}</P>
+        </li>
+      ) : (
+        <li class="flex space-x-4 bg-carbon-200 text-red-500 py-2.5 px-4 rounded-md shadow-md dark:bg-carbon-500">
+          <span>No se ha encontrado icono para '{tool}'</span>
+        </li>
+      )
+    )
+  ) : (
+    <li class="text-gray-500">No se han especificado herramientas para este proyecto.</li>
+  )}
+</ul>
