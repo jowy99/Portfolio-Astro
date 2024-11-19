@@ -6,7 +6,7 @@ const { title, description, imageUrl, projectUrl, url } = Astro.props;
 
 <article class="max-w-lg mx-auto rounded-lg shadow-xl overflow-hidden transition-transform transform hover:scale-105 h-full">
   <a href={url} class="group relative w-full h-full">
-      <img src={imageUrl} alt="Development projects image" class="w-full h-full rounded-md object-fill dark:opacity-75 group-hover:opacity-100" loading="lazy">
+      <img src={imageUrl} alt="Development projects image" class="w-full h-full rounded-md object-fill dark:opacity-75 group-hover:opacity-100">
       <section class="w-max absolute inset-0">
           <H4>{title}</H4>
       </section>
