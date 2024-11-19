@@ -6,6 +6,9 @@ import P from "../Basics/p.astro"
 import H5 from "../Basics/h5.astro"
 import { Image } from "astro:assets"
 import laptopimage from "../../assets/images/laptop.jpeg"
+
+import Linkedin from "../icons/linkedin.astro"
+import Instagram from "../icons/instagram.astro"
 ---
 
 <article class="min-h-screen w-full mt-12 space-y-12">
@@ -23,13 +26,19 @@ import laptopimage from "../../assets/images/laptop.jpeg"
                 </aside>
     
                 <!-- Formulario de contacto -->
-                <section class="w-full flex flex-col items-center justify-center space-y-8 lg:w-8/12 lg:space-y-0">
-                    <div class="flex flex-col items-center justify-center space-y-8">
+                <section class="w-full flex flex-col items-center justify-center space-y-12 lg:w-8/12 xl:space-y-12 2xl:space-y-0">
+                    <div class="flex flex-col items-center justify-center space-y-14">
                         <H5>Envíame un mensaje</H5>
-                        <div class="px-4">
-                            <P>
-                                Actualmente estoy abierto a cualquier sugerencia o propuesta de trabajo, así que no dudes en ponerte en contacto conmigo.
-                            </P>
+                        <div class="flex space-x-8 px-4">
+                            <a href="https://www.linkedin.com/in/joelarnaudcarreras/" class="flex space-x-2 items-center">
+                                <Linkedin/>
+                                <P>LinkedIn</P>
+                            </a>
+                            <div class="h-6 w-px bg-gray-300"></div>
+                            <a href="https://www.instagram.com/sagiittarius24" class="flex space-x-2 items-center">
+                                <Instagram/>
+                                <P>Instagram</P>
+                            </a>
                         </div>
                     </div>
                     <form id="contact-form" action="./../../pages/api/send-email.js" method="post" class="w-full h-full space-y-16 flex flex-col items-center justify-center lg:w-8/12">
