@@ -1,6 +1,17 @@
 ---
 import H3 from "../Basics/h3.astro"
 import P from "../Basics/p.astro"
+
+import Laravel from "../icons/laravel.astro"
+import AstroIcon from "../icons/astroIcon.astro"
+import Tailwind from "../icons/tailwind.astro"
+import HTML from "../icons/html.astro"
+import CSS from "../icons/css.astro"
+import JavaScript from "../icons/javascript.astro"
+import Java from "../icons/java.astro"
+import Python from "../icons/python.astro"
+import Git from "../icons/git.astro"
+import MySQL from "../icons/mysql.astro"
 ---
 <section class="flex flex-col items-center justify-center space-y-8">
     <H3>Estudios</H3>
@@ -39,39 +50,43 @@ import P from "../Basics/p.astro"
     <section class="flex-col space-y-8">
         <div class="grid grid-cols-2 gap-6 items-center justify-between md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 2xl:gap-4">
             <div class="flex space-x-4 bg-carbon-200 text-white py-2.5 px-4 rounded-md shadow-md dark:bg-carbon-500">
-                <x-fab-laravel class="w-6 h-6" />
+                <Laravel/>
                 <P class="capitalize text-white">Laravel</P>
             </div>
             <div class="flex space-x-4 bg-carbon-200 text-white py-2.5 px-4 rounded-md shadow-md dark:bg-carbon-500">
-                <x-si-tailwindcss class="w-6 h-6" />
+                <AstroIcon/>
+                <P class="capitalize text-white">AstroJS</P>
+            </div>
+            <div class="flex space-x-4 bg-carbon-200 text-white py-2.5 px-4 rounded-md shadow-md dark:bg-carbon-500">
+                <Tailwind/>
                 <P class="capitalize text-white">TailwindCSS</P>
             </div>
             <div class="flex space-x-4 bg-carbon-200 text-white py-2.5 px-4 rounded-md shadow-md dark:bg-carbon-500">
-                <x-si-html5 class="w-6 h-6" />
+                <HTML/>
                 <P class="capitalize text-white">HTML5</P>
             </div>
             <div class="flex space-x-4 bg-carbon-200 text-white py-2.5 px-4 rounded-md shadow-md dark:bg-carbon-500">
-                <x-si-css3 class="w-6 h-6" />
+                <CSS/>
                 <P class="capitalize text-white">CSS3</P>
             </div>
             <div class="flex space-x-4 bg-carbon-200 text-white py-2.5 px-4 rounded-md shadow-md dark:bg-carbon-500">
-                <x-si-javascript class="w-6 h-6" />
+                <JavaScript/>
                 <P class="capitalize text-white">javaScript</P>
             </div>
             <div class="flex space-x-4 bg-carbon-200 text-white py-2.5 px-4 rounded-md shadow-md dark:bg-carbon-500">
-                <x-fab-java class="w-6 h-6" />
+                <Java/>
                 <P class="capitalize text-white">java</P>
             </div>
             <div class="flex space-x-4 bg-carbon-200 text-white py-2.5 px-4 rounded-md shadow-md dark:bg-carbon-500">
-                <x-si-python class="w-6 h-6" />
+                <Python/>
                 <P class="capitalize text-white">python</P>
             </div>
             <div class="flex space-x-4 bg-carbon-200 text-white py-2.5 px-4 rounded-md shadow-md dark:bg-carbon-500">
-                <x-si-git class="w-6 h-6" />
+                <Git/>
                 <P class="capitalize text-white">Git</P>
             </div>
             <div class="flex space-x-4 bg-carbon-200 text-white py-2.5 px-4 rounded-md shadow-md dark:bg-carbon-500">
-                <x-si-mysql class="w-6 h-6" />
+                <MySQL/>
                 <P class="capitalize text-white">MySQL</P>
             </div>
         </div>
