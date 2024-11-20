@@ -22,7 +22,7 @@ import Instagram from "../icons/instagram.astro"
                 
                 <!-- Imagen de contacto - solo visible en pantallas grandes -->
                 <aside class="hidden xl:block xl:w-4/12 xl:h-full" aria-hidden="true">
-                    <Image src={laptopimage} alt="Imagen de un ordenador portátil." class="w-full h-full object-cover rounded-md" loading="lazy" />
+                    <Image src={laptopimage} alt="Imagen de un ordenador portátil." class="w-full h-full object-cover rounded-md" loading="lazy" decoding="async" />
                 </aside>
     
                 <!-- Formulario de contacto -->

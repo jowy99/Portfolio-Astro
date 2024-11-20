@@ -30,7 +30,7 @@ console.log('DATA:', data);
     <main class="flex flex-col min-h-screen">
         <ReturnButton />
         
-        <img transition:name={`img-${slug}`} src={imageUrl} alt="Development projects image" class="w-full h-80 object-cover object-center">
+        <img transition:name={`img-${slug}`} src={imageUrl} alt="Development projects image" class="w-full h-80 object-cover object-center" loading="lazy" decoding="async">
 
         <article class="mt-8 mx-4 h-2/3 space-y-8 flex flex-col items-center">  
             <H2>{title}</H2>

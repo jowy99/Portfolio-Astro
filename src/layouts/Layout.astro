@@ -6,6 +6,9 @@ interface Props{
   title: string;
 }
 
+const imageImports = import.meta.glob('/src/assets/images/*.{jpg,png,jpeg}');
+const imagesToPreload = Object.keys(imageImports);
+
 const { title } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -44,6 +47,10 @@ const { title } = Astro.props;
 
     <ClientRouter/>
     
+    {imagesToPreload.map((image) => (
+      <link rel="preload" as="image" href={image} />
+    ))}
+
     <title>{title}</title>
   </head>
   <body class="font-AlbertSans antialiased dark:bg-zinc-800">
