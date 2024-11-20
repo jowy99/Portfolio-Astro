@@ -11,8 +11,8 @@ router.post('/', async (req, res) => {
         port: 465,
         secure: true,
         auth: {
-            user: 'joelarnaudcarreras@gmail.com',
-            pass: 'yrlikbjcuwjmbqjv',
+            user: '',
+            pass: '',
         },
     });
 
