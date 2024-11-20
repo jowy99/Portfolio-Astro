@@ -1,6 +1,6 @@
 ---
 title: Festival de Granada
-imageUrl: /src/assets/images/festivaldegranada.png
+imageUrl: ./src/assets/images/festivaldegranada.png
 projectUrl: https://github.com/jowy99/FestivalDeGranada
 tools:
     - laravel

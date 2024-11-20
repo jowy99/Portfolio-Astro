@@ -7,10 +7,12 @@ router.post('/', async (req, res) => {
     const { name, lastname, email, message } = req.body;
 
     const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: true,
         auth: {
             user: 'joelarnaudcarreras@gmail.com',
-            pass: 'yrlikbjcuwjmbqjv', // Contraseña de aplicación
+            pass: 'yrlikbjcuwjmbqjv',
         },
     });
 

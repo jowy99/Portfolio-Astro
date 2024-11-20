@@ -1,6 +1,6 @@
 ---
 title: Monopoly
-imageUrl: /src/assets/images/monopoly.png
+imageUrl: ./src/assets/images/monopoly.png
 projectUrl: https://github.com/jowy99/monopoly
 tools:
     - java

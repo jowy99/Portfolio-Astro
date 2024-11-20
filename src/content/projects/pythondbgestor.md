@@ -1,6 +1,6 @@
 ---
 title: Gestor DB Python
-imageUrl: /src/assets/images/pythondatabase.png
+imageUrl: ./src/assets/images/pythondatabase.png
 projectUrl: https://github.com/jowy99/Proyecto-Python-SQL
 tools:
     - python
