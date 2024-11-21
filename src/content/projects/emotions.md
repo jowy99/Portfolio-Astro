@@ -1,6 +1,6 @@
 ---
 title: Emotions App
-imageUrl: ../../assets/images/emotionsapp.png
+imageUrl: emotionsapp.png
 projectUrl: https://github.com/jowy99/emotions
 tools:
     - laravel

@@ -1,6 +1,6 @@
 ---
 title: Juego de Memoria
-imageUrl: ./src/assets/images/memorygame.png
+imageUrl: memorygame.png
 projectUrl: https://github.com/jowy99/Juego-de-Memoria
 tools:
     - html

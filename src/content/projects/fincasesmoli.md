@@ -1,6 +1,6 @@
 ---
 title: Fincas es Molí
-imageUrl: ./src/assets/images/fincasesmoli.png
+imageUrl: fincasesmoli.png
 projectUrl: https://fincasesmoli.com/es
 tools:
     - laravel
