@@ -2,6 +2,7 @@
 title: Festival de Granada
 imageUrl: festivaldegranada.png
 projectUrl: https://github.com/jowy99/FestivalDeGranada
+featured: true
 tools:
     - laravel
     - tailwind

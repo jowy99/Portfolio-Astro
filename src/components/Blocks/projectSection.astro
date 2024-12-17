@@ -7,37 +7,51 @@ import Button1 from "./../../components/Basics/button1.astro";
 import P from "../Basics/p.astro";
 
 const projects = await getCollection("projects");
-const limitedProjects = projects.slice(0, 4);
+const featuredProjects = projects.filter(project => project.data.featured).slice(0, 4);
+
 ---
 
-<section class="flex flex-col justify-between w-full min-h-screen p-4 space-y-8 lg:space-y-24 lg:mt-24">
-    <section class="space-y-8 h-1/4 w-full">
-        <H2>Mis proyectos</H2>
-        <Titlehr/>
-    </section>
+<section class="flex flex-col justify-between w-full h-screen p-4 space-y-8 lg:space-y-24 lg:mt-24">
+  <!-- Título de la sección -->
+  <section class="text-center">
+    <H2 class="mb-4">Mis proyectos</H2>
+    <Titlehr/>
+  </section>
+  
+  <!-- Texto minimalista con diseño elegante -->
+  <section class="flex items-center justify-center">
+    <p class="text-lg text-gray-700 dark:text-gray-200 font-medium text-center max-w-2xl leading-relaxed">
+      Proyectos desarrollados con atención al detalle, aplicando prácticas modernas de diseño y desarrollo web para ofrecer soluciones innovadoras y efectivas.
+    </p>
+  </section>
 
-    <main class="h-full flex flex-col space-y-8 lg:flex-row justify-between lg:space-x-8 lg:space-y-0">
-      {
-        limitedProjects.map(project => {
-          const { slug, data } = project;
-          const { title, imageUrl, projectUrl } = data;
-          return (
-              <ProjectCard
-                transition:name={`img-${slug}`}
-                title={title}
-                description={data.description}
-                imageUrl={imageUrl}
-                projectUrl={projectUrl}
-                url={`/proyectos/${slug}`}
-              ></ProjectCard>
-          )
-        })
-      }
-    </main>
+  <!-- Contenedor principal con flexbox y 4 columnas fijas -->
+  <main class="flex justify-between gap-4">
+    {
+      featuredProjects.map(project => {
+        const { slug, data } = project;
+        const { title, imageUrl, projectUrl } = data;
+        return (
+          <section class="w-1/4 flex justify-center">
+            <ProjectCard
+              transition:name={`img-${slug}`}
+              title={title}
+              description={data.description}
+              imageUrl={imageUrl}
+              projectUrl={projectUrl}
+              url={`/proyectos/${slug}`}
+              class="w-full h-auto"
+            ></ProjectCard>
+          </section>
+        );
+      })
+    }
+  </main>
 
-    <section class="flex items-center justify-center">
-        <a href="/proyectos">
-            <Button1>Más proyectos</Button1>
-        </a>
-    </section>
+  <!-- Botón centrado -->
+  <section class="flex items-center justify-center">
+    <a href="/proyectos">
+      <Button1>Más proyectos</Button1>
+    </a>
+  </section>
 </section>

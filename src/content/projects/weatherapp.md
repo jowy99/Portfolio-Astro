@@ -3,6 +3,7 @@ title: Aplicación del Tiempo
 imageUrl: weatherapp.png
 projectUrl: https://github.com/jowy99/weather-app
 webUrl: https://weather.joelarnaud.com
+featured: true
 tools:
     - react
     - vite

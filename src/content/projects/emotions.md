@@ -2,6 +2,7 @@
 title: Emotions App
 imageUrl: emotionsapp.png
 projectUrl: https://github.com/jowy99/emotions
+featured: true
 tools:
     - laravel
     - javascript
