@@ -183,6 +183,13 @@ declare module 'astro:content' {
   collection: "projects";
   data: any
 } & { render(): Render[".md"] };
+"weatherapp.md": {
+	id: "weatherapp.md";
+  slug: "weatherapp";
+  body: string;
+  collection: "projects";
+  data: any
+} & { render(): Render[".md"] };
 };
 
 	};
