@@ -1,102 +1,64 @@
 ---
-import H2 from "../Basics/h2.astro"
-import Titlehr from "../Basics/titlehr.astro"
-import Button1 from "../Basics/button1.astro"
-import P from "../Basics/p.astro"
-import H5 from "../Basics/h5.astro"
-import { Image } from "astro:assets"
-import laptopimage from "../../assets/images/laptop.jpeg"
+import H2 from "../Basics/h2.astro";
+import Titlehr from "../Basics/titlehr.astro";
+import Button1 from "../Basics/button1.astro";
+import P from "../Basics/p.astro";
+import H5 from "../Basics/h5.astro";
+import { Image } from "astro:assets";
+import laptopimage from "../../assets/images/laptop.jpeg";
 
-import Linkedin from "../icons/linkedin.astro"
-import Instagram from "../icons/instagram.astro"
+import Linkedin from "../icons/linkedin.astro";
+import Instagram from "../icons/instagram.astro";
 ---
 
-<article class="min-h-screen w-full mt-12 space-y-12">
-    <section class="flex-col space-y-8 h-1/4 w-full">
+<article class="min-h-screen flex flex-col items-center justify-center space-y-8 px-4 lg:px-0">
+    <!-- Encabezado -->
+    <section class="text-center space-y-2">
         <H2>Contacto</H2>
         <Titlehr/>
     </section>
-    <div class="p-2 lg:flex lg:items-center lg:justify-center lg:mt-4">
-        <div class="w-full h-full bg-green-500 dark:bg-green-800 dark:border-green-700 rounded-lg py-6 px-4 lg:w-8/12 lg:h-auto lg:rounded-lg lg:p-8">
-            <div class="lg:flex lg:space-x-6">
-                
-                <!-- Imagen de contacto - solo visible en pantallas grandes -->
-                <aside class="hidden xl:block xl:w-4/12 xl:h-full" aria-hidden="true">
-                    <Image src={laptopimage} alt="Imagen de un ordenador portátil." class="w-full h-full object-cover rounded-md" loading="lazy" decoding="async" />
-                </aside>
-    
-                <!-- Formulario de contacto -->
-                <section class="w-full flex flex-col items-center justify-center space-y-12 lg:w-8/12 xl:space-y-12 2xl:space-y-0">
-                    <div class="flex flex-col items-center justify-center space-y-14">
-                        <H5>Envíame un mensaje</H5>
-                        <div class="flex space-x-8 px-4">
-                            <a href="https://www.linkedin.com/in/joelarnaudcarreras/" class="flex space-x-2 items-center">
-                                <Linkedin/>
-                                <P reverse>LinkedIn</P>
-                            </a>
-                            <div class="h-6 w-px bg-gray-300"></div>
-                            <a href="https://www.instagram.com/sagiittarius24" class="flex space-x-2 items-center">
-                                <Instagram/>
-                                <P reverse>Instagram</P>
-                            </a>
-                        </div>
-                    </div>
-                    <form id="contact-form" action="./../../pages/api/send-email.js" method="post" class="w-full h-full space-y-16 flex flex-col items-center justify-center lg:w-8/12">
-                        <div class="flex flex-col space-y-4">
-                            <div class="space-y-4 lg:flex lg:space-x-4 lg:space-y-0">
-                                <input type="text" name="name" placeholder="Nombre" required="required" class="flex-1 min-w-0 drop-shadow-md block lg:text-md border-0 ring-1 ring-inset ring-carbon-300 w-full py-4 px-6 border-none rounded-md text-carbon-600 bg-gray-100 focus:ring-carbon-500 focus:ring-2">
-                                <input type="text" name="lastname" placeholder="Apellidos" required="required" class="flex-1 min-w-0 drop-shadow-md block lg:text-md border-0 ring-1 ring-inset ring-carbon-300 w-full py-4 px-6 border-none rounded-md text-carbon-600 bg-gray-100 focus:ring-carbon-500 focus:ring-2">
-                            </div>
-                            <input type="email" name="email" placeholder="Correo" required="required" class="flex-1 min-w-0 drop-shadow-md block lg:text-md border-0 ring-1 ring-inset ring-carbon-300 w-full py-4 px-6 border-none rounded-md text-carbon-600 bg-gray-100 focus:ring-carbon-500 focus:ring-2">
-                            <textarea name="message" placeholder="Mensaje" class="w-full font-sans drop-shadow-md py-4 px-6 border-none text-carbon-600 bg-gray-100 focus:ring-2 mt-2 resize-y focus:ring-carbon-500 focus:shadow-md focus:border-carbon-500 rounded-md lg:text-md border-carbon-300"></textarea>
-                        </div>
-                        <div>
-                            <Button1 variant="secondary" type="submit">Enviar</Button1>
-                        </div>
-                    </form>
-                </section>
+
+    <!-- Contenido Principal -->
+    <div class="flex flex-col lg:flex-row items-center justify-center w-full max-w-6xl bg-green_light-500 dark:bg-green-700 rounded-lg shadow-lg overflow-hidden">
+        <!-- Imagen -->
+        <aside class="hidden lg:block w-full lg:w-5/12">
+            <Image src={laptopimage} alt="Imagen de un ordenador portátil." 
+                   class="w-full h-full object-cover shadow-lg" loading="lazy" decoding="async" />
+        </aside>
+
+        <!-- Formulario -->
+        <section class="w-full lg:w-7/12 p-6 lg:p-8 space-y-8">
+            <!-- Texto y redes sociales -->
+            <div class="text-center space-y-4">
+                <H5 class="text-carbon-700 dark:text-green_light-50">Envíame un mensaje</H5>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://www.linkedin.com/in/joelarnaudcarreras/" 
+                       class="text-carbon-500 hover:text-green-400 transition">
+                        <Linkedin class="w-6 h-6 inline-block"/>
+                    </a>
+                    <a href="https://www.instagram.com/sagiittarius24" 
+                       class="text-carbon-500 hover:text-green-400 transition">
+                        <Instagram class="w-6 h-6 inline-block" style="fill: currentColor;"/>
+                    </a>
+                </div>
             </div>
-        </div>
+            
+            <!-- Formulario -->
+            <form id="contact-form" action="#" method="post" class="space-y-6">
+                <div class="flex flex-col lg:flex-row lg:space-x-4">
+                    <input type="text" name="name" placeholder="Nombre" required
+                           class="w-full py-3 px-4 border rounded-md text-carbon-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <input type="text" name="lastname" placeholder="Apellidos" required
+                           class="w-full py-3 px-4 border rounded-md text-carbon-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+                </div>
+                <input type="email" name="email" placeholder="Correo" required
+                       class="w-full py-3 px-4 border rounded-md text-carbon-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+                <textarea name="message" placeholder="Mensaje" rows="4"
+                          class="w-full py-3 px-4 border rounded-md text-carbon-700 focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                <div class="text-center">
+                    <Button1 variant="secondary" type="submit">Enviar</Button1>
+                </div>
+            </form>
+        </section>
     </div>
-    
-
 </article>
-
-<script>
-const form = document.getElementById('contact-form');
-
-if (form instanceof HTMLFormElement) { // Verifica que form es un HTMLFormElement
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        // Convierte los datos del formulario en un objeto URLSearchParams
-        const formData = new FormData(form);
-        const data = new URLSearchParams();
-        formData.forEach((value, key) => {
-            data.append(key, value.toString());
-        });
-
-        try {
-            const response = await fetch('http://localhost:5000/api/send-email', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: data.toString(),
-            });
-
-            const result = await response.json();
-            if (response.ok) {
-                alert(result.success);
-                form.reset();
-            } else {
-                alert(result.error);
-            }
-        } catch (error) {
-            console.error("Error en la solicitud:", error);
-            alert("Error al enviar el formulario.");
-        }
-    });
-} else {
-    console.error("El elemento con id 'contact-form' no es un formulario.");
-}
-
-</script>
