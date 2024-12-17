@@ -21,7 +21,7 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { data, slug } = project;
-const { title, imageUrl, projectUrl } = data;
+const { title, imageUrl, projectUrl, webUrl } = data;
 const status = data.status || [];
 const tools = data.tools || [];
 
@@ -48,10 +48,20 @@ console.log('DATA:', data);
             <div class="flex space-x-4">
                 <ToolList tools={tools} />
             </div>
-
-            <a href={ projectUrl } target="_blank" rel="noopener noreferrer">
-                <Button1>Ver proyecto</Button1>
-            </a>
+            
+            <div class="flex space-x-8">
+                {projectUrl && (
+                    <a href={ projectUrl } target="_blank" rel="noopener noreferrer">
+                        <Button1>Ver proyecto</Button1>
+                    </a>
+                )}
+                {webUrl && (
+                    <a href={ webUrl } target="_blank" rel="noopener noreferrer">
+                        <Button1>Ver web</Button1>
+                    </a>
+                )}
+            </div>
+            
         </article>
     </main>
 </Layout>
