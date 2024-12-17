@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
 import ToolList from '../../components/Blocks/ToolList.astro';
+import StatusList from '../../components/Blocks/StatusList.astro';
 import ReturnButton from "../../components/Blocks/ReturnButton.astro";
 
 import H2 from "../../components/Basics/h2.astro";
@@ -21,6 +22,7 @@ export async function getStaticPaths() {
 const { project } = Astro.props;
 const { data, slug } = project;
 const { title, imageUrl, projectUrl } = data;
+const status = data.status || [];
 const tools = data.tools || [];
 
 const { Content } = await render(project);
@@ -37,9 +39,8 @@ console.log('DATA:', data);
             <Titlehr/>
 
             <div class="prose dark:prose-invert leading-5 font-md text-carbon-400 dark:text-green_light-500">
-                <div class="my-4 inline-flex items-center space-x-2 rounded-full border-2 border-done px-2 py-1 shadow-md">
-                    <div class="w-2 h-2 bg-done rounded-full flex-shrink-0"></div>
-                    <span class="capitalize inline-flex items-center text-sm font-medium text-carbon-500 dark:text-white">proyecto terminado</span>
+                <div class="flex">
+                    <StatusList status={status} />
                 </div>
                 <Content />
             </div>

@@ -6,6 +6,9 @@ tools:
     - laravel
     - tailwind
     - mysql
+status:
+    - finished
+    - rework
 ---
 **Festival de Granada** es una aplicación diseñada para gestionar bases de datos de manera eficiente, reemplazando el uso de Excel en la organización donde realicé mis prácticas. Este gestor permite almacenar y consultar información delicada con mayor seguridad y automatización, mejorando los procesos internos.
 

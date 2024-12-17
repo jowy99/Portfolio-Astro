@@ -7,6 +7,9 @@ tools:
     - javascript
     - tailwind
     - mysql
+status:
+    - unfinished
+    - corefeatures
 ---
 **Emotions** es una plataforma inspirada en el funcionamiento de Twitter, diseñada para facilitar a los usuarios la expresión sencilla y directa de sus sentimientos. El proyecto combina una interfaz moderna con funcionalidades prácticas que permiten la creación de perfiles de usuario personalizados y una interacción fluida.
 

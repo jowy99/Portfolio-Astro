@@ -1,0 +1,35 @@
+---
+interface Props {
+  status: string[];
+}
+
+const { status } = Astro.props as Props;
+
+// Cargar dinámicamente los componentes de íconos
+const icons = status.length > 0
+  ? await Promise.all(
+      status.map(async (state) => {
+        try {
+          const Icon = await import(`../../components/status/${state}.astro`);
+          return { state, Icon: Icon.default };
+        } catch (e) {
+          console.error(`No se pudo cargar el ícono para ${state}:`, e);
+          return { state, Icon: null };
+        }
+      })
+    )
+  : [];
+---
+<ul class="flex flex-wrap gap-4 justify-center items-center list-none p-0">
+  {icons.length > 0 ? (
+    icons.map(({ state, Icon }) =>
+      Icon ? (
+        <Icon/>
+      ) : (
+        <li class="text-red-600 dark:text-red-500">No se ha encontrado etiqueta para '{state}'.</li>
+      )
+    )
+  ) : (
+    <li class="text-gray-500">No se han especificado etiquetas para este proyecto.</li>
+  )}
+</ul>

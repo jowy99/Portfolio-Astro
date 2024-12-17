@@ -1,7 +1,10 @@
 ---
-import P from "../Basics/p.astro";
 import Pill from "../Blocks/pill.astro";
-const { tools } = Astro.props;
+interface Props {
+  tools: string[];
+}
+
+const { tools } = Astro.props as Props;
 
 // Cargar dinámicamente los componentes de íconos
 const icons = tools.length > 0

@@ -7,6 +7,8 @@ tools:
     - javascript
     - tailwind
     - mysql
+status:
+    - finished
 ---
 **Fincas es Molí** es una página web desarrollada para una inmobiliaria de Menorca, cuyo objetivo principal era mejorar su presencia online con un diseño moderno, rápido y funcional. La web está orientada tanto a los compradores como a los empleados, ofreciendo una experiencia fluida y herramientas de administración eficientes.
 

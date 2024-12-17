@@ -6,6 +6,8 @@ tools:
     - html
     - javascript
     - tailwind
+status:
+    - finished
 ---
 El **juego de memoria** es una aplicación sencilla diseñada para entretener a los usuarios mientras ejercitan su memoria. Con una mecánica intuitiva, este proyecto ofrece una experiencia ligera y atractiva.
 

@@ -5,6 +5,8 @@ projectUrl: https://github.com/jowy99/Proyecto-Python-SQL
 tools:
     - python
     - mysql
+status:
+    - finished
 ---
 El **Gestor de Base de Datos en Python** es una aplicación académica diseñada para realizar operaciones básicas de gestión de bases de datos directamente desde la terminal. Este proyecto permite interactuar con múltiples tablas a través de una conexión a MySQL, facilitando la manipulación de datos de manera eficiente.
 

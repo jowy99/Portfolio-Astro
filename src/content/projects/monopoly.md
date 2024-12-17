@@ -4,6 +4,8 @@ imageUrl: monopoly.png
 projectUrl: https://github.com/jowy99/monopoly
 tools:
     - java
+status:
+    - finished
 ---
 El proyecto **Monopoly** es una versión básica del clásico juego de mesa, diseñada para ejecutarse en la terminal. Este proyecto fue desarrollado como tarea académica, cumpliendo con los requisitos establecidos y demostrando habilidades de programación.
 
