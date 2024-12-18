@@ -2,6 +2,7 @@
 title: Monopoly
 imageUrl: monopoly.png
 projectUrl: https://github.com/jowy99/monopoly
+date: 2022-10-20
 tools:
     - java
 status:

@@ -3,6 +3,7 @@ title: Fincas es Molí
 imageUrl: fincasesmoli.png
 projectUrl: https://fincasesmoli.com/es
 featured: true
+date: 2023-04-09
 tools:
     - laravel
     - javascript

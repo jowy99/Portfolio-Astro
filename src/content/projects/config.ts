@@ -8,6 +8,7 @@ const projects = defineCollection({
         webUrl: z.string().url().optional(),
         tools: z.array(z.string()).optional(),
         status: z.array(z.string()).optional(),
+        date: z.date(),
         layout: z.string(),
     }),
   })

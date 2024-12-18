@@ -3,6 +3,7 @@ title: Festival de Granada
 imageUrl: festivaldegranada.png
 projectUrl: https://github.com/jowy99/FestivalDeGranada
 featured: true
+date: 2023-04-22
 tools:
     - laravel
     - tailwind

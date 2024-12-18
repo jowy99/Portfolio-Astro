@@ -2,6 +2,7 @@
 title: Juego de Memoria
 imageUrl: memorygame.png
 projectUrl: https://github.com/jowy99/Juego-de-Memoria
+date: 2022-11-20
 tools:
     - html
     - javascript

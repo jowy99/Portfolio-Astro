@@ -2,6 +2,7 @@
 title: Gestor DB Python
 imageUrl: pythondatabase.png
 projectUrl: https://github.com/jowy99/Proyecto-Python-SQL
+date: 2022-11-15
 tools:
     - python
     - mysql

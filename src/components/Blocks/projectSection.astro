@@ -7,8 +7,12 @@ import Button1 from "./../../components/Basics/button1.astro";
 import P from "../Basics/p.astro";
 
 const projects = await getCollection("projects");
-const featuredProjects = projects.filter(project => project.data.featured).slice(0, 4);
 
+// Filtrar proyectos destacados y ordenarlos por fecha
+const featuredProjects = projects
+  .filter(project => project.data.featured && project.data.date) // Filtrar con fecha y destacados
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 4);
 ---
 
 <section class="flex flex-col justify-between w-full min-h-screen p-4 space-y-8 lg:space-y-24 lg:mt-24">
