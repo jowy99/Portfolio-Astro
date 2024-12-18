@@ -11,7 +11,7 @@ const featuredProjects = projects.filter(project => project.data.featured).slice
 
 ---
 
-<section class="flex flex-col justify-between w-full h-screen p-4 space-y-8 lg:space-y-24 lg:mt-24">
+<section class="flex flex-col justify-between w-full min-h-screen p-4 space-y-8 lg:space-y-24 lg:mt-24">
   <!-- Título de la sección -->
   <section class="text-center">
     <H2 class="mb-4">Mis proyectos</H2>
@@ -25,14 +25,14 @@ const featuredProjects = projects.filter(project => project.data.featured).slice
     </p>
   </section>
 
-  <!-- Contenedor principal con flexbox y 4 columnas fijas -->
-  <main class="flex justify-between gap-4">
+  <!-- Contenedor principal con flexbox y responsive -->
+  <main class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
     {
       featuredProjects.map(project => {
         const { slug, data } = project;
         const { title, imageUrl, projectUrl } = data;
         return (
-          <section class="w-1/4 flex justify-center">
+          <section class="flex justify-center">
             <ProjectCard
               transition:name={`img-${slug}`}
               title={title}
@@ -40,7 +40,7 @@ const featuredProjects = projects.filter(project => project.data.featured).slice
               imageUrl={imageUrl}
               projectUrl={projectUrl}
               url={`/proyectos/${slug}`}
-              class="w-full h-auto"
+              class="w-full h-full md:h-auto"
             ></ProjectCard>
           </section>
         );
