@@ -5,13 +5,13 @@ const { props, reverse } = Astro.props;
 
 {reverse ? (
     <>
-        <h5 class={`${props} font-semibold text-white dark:text-green_light-600 text-lg lg:text-lg`}>
+        <h5 class={`${props} font-semibold text-white dark:text-green_light-600 text-lg lg:text-2xl`}>
             <slot/>
         </h5>
     </>
 ) : (
     <>
-        <h5 class={`${props} font-semibold text-green-800 dark:text-green_light-200 text-lg lg:text-lg`}>
+        <h5 class={`${props} font-semibold text-green-800 dark:text-green_light-200 text-lg lg:text-2xl`}>
             <slot/>
         </h5>
     </>
