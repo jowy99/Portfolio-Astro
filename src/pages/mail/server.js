@@ -13,7 +13,7 @@ app.use(cors());
 
 // Ruta para manejar el formulario
 app.post("/send-email", async (req, res) => {
-    console.log("Datos recibidos:", req.body);
+  console.log("Se ha enviado un correo.");
   const { name, lastname, email, message } = req.body;
 
   // Validaciones básicas
@@ -32,134 +32,34 @@ app.post("/send-email", async (req, res) => {
 
   // Contenido del correo
   const mailOptions = {
-    from: "joelarnaudcarreras@gmail.com",
+    from: "joelarnaudcarreras@gmail.com", // Cambia por tu correo de Gmail
     to: "joelarnaudcarreras@gmail.com", // Cambia por el correo donde recibirás los mensajes
     subject: "Nueva solicitud de contacto",
     html: `
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto</title>
-  <style>
-    #lastname {
-      margin-left: 1rem;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4; /* Fondo general */
-    }
-    .container {
-      max-width: 600px;
-      margin: 20px auto;
-      background-color: #d7e0da;
-      border-radius: 8px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más notoria */
-      overflow: hidden;
-      border: 2px solid #989898; /* Borde oscuro */
-    }
-    .header {
-      background-color: #648374;
-      color: #ffffff;
-      text-align: center;
-      padding: 30px;
-    }
-    .header .name-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 16px; /* Espaciado entre los elementos (simula space-x-4 de Tailwind) */
-    }
-    .header .name-container p {
-      margin: 0;
-      font-size: 24px; /* Tamaño del texto más grande */
-      font-weight: bold; /* Nombre y apellido en negrita */
-    }
-    .body {
-      padding: 20px;
-      color: #333333;
-    }
-    .body h2 {
-      margin-top: 0;
-      font-size: 20px;
-      color: #648374;
-    }
-    .body p {
-      margin: 10px 0;
-      line-height: 1.6;
-    }
-    .body .details {
-      margin: 20px 0;
-      padding: 15px;
-      background-color: #f9f9f9;
-      border-left: 4px solid #648374;
-      border-radius: 4px;
-      color: #555555;
-    }
-    .button-container {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .button {
-      background-color: #648374;
-      color: #ffffff !important; /* Forzamos el texto blanco */
-      padding: 10px 20px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-    }
-    .button:hover {
-      background-color: #567364;
-    }
-    .footer {
-      background-color: #e8e8e8;
-      text-align: center;
-      padding: 10px;
-      font-size: 12px;
-      color: #888888;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <!-- Encabezado -->
-    <div class="header">
-      <div class="name-container">
-        <p id="name">${name}</p>
-        <p id="lastname">${lastname}</p>
-      </div>
-    </div>
-
-    <!-- Contenido del cuerpo -->
-    <div class="body">
-      <h2>Mensaje de:</h2>
-      <p>${email}</p>
-      <div class="details">
-        <p>${message}</p>
-      </div>
-      <div class="button-container">
-        <a href="mailto:${email}" class="button">Responder</a>
-      </div>
-    </div>
-
-    <!-- Pie de página -->
-    <div class="footer">
-      <p>© 2024 Mi Portafolio. Todos los derechos reservados.</p>
-    </div>
-  </div>
-</body>
-</html>
-
-
-
-
-
-
-
+        <table style="width: 100%; max-width: 600px; font-family: Arial, sans-serif; background-color: #d7e0da; border-collapse: collapse;">
+            <tr>
+                <td style="background-color: #648374; color: #ffffff; text-align: center; padding: 20px;">
+                    <h2 style="font-size: 24px; margin: 0;">Nuevo mensaje de contacto</h2>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #ffffff; padding: 30px;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr><td style="font-size: 18px; color: #3c4e45;"><strong>Nombre:</strong></td><td style="font-size: 18px;">${name}</td></tr>
+                        <tr><td style="font-size: 18px; color: #3c4e45;"><strong>Apellidos:</strong></td><td style="font-size: 18px;">${lastname}</td></tr>
+                        <tr><td style="font-size: 18px; color: #3c4e45;"><strong>Correo:</strong></td><td style="font-size: 18px;">${email}</td></tr>
+                        <tr><td colspan="2" style="font-size: 18px; color: #3c4e45; padding-top: 25px;"><strong>Mensaje:</strong></td></tr>
+                        <tr><td colspan="2" style="font-size: 16px; line-height: 1.6; color: #1d1d1d; background-color: #f0f7f4; padding: 20px;">${message}</td></tr>
+                    </table>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <a href="mailto:${email}?subject=Respuesta a tu mensaje en el Portfolio" style="display: inline-block; padding: 12px 24px; font-size: 16px; color: #ffffff; background-color: #5a7568; border-radius: 5px; text-decoration: none;">Responder al Correo</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 20px; text-align: center; color: #5a5a5a; font-size: 14px; background-color: #dbdbdb;">&copy; ${new Date().getFullYear()} Joel Arnaud Portfolio. Todos los derechos reservados.</td>
+            </tr>
+        </table>
     `,
   };
 
