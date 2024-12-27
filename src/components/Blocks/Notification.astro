@@ -1,0 +1,22 @@
+---
+export let type = "success"; // Puede ser "success" o "error"
+export let message = "";
+
+const closeNotification = (event) => {
+    event.target.parentElement.remove();
+};
+---
+
+<div
+  class={`fixed top-4 right-4 px-6 py-3 rounded-md shadow-lg text-white transition duration-300 ease-in-out ${
+    type === "success" ? "bg-green-500" : "bg-red-500"
+  }`}
+>
+  {message}
+  <button
+    class="ml-4 text-lg font-bold hover:text-gray-200"
+    on:click={closeNotification}
+  >
+    ×
+  </button>
+</div>

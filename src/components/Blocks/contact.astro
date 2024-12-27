@@ -1,8 +1,10 @@
 ---
+// Importamos los componentes básicos
 import H2 from "../Basics/h2.astro";
 import Titlehr from "../Basics/titlehr.astro";
 import Button1 from "../Basics/button1.astro";
 import H5 from "../Basics/h5.astro";
+
 import { Image } from "astro:assets";
 import laptopimage from "../../assets/images/laptop.jpeg";
 
@@ -10,11 +12,12 @@ import Linkedin from "../icons/linkedin.astro";
 import Instagram from "../icons/instagram.astro";
 ---
 
+// Componente actualizado
 <article class="min-h-screen flex flex-col items-center justify-center space-y-8 px-4 lg:px-0">
     <!-- Encabezado -->
     <section class="text-center space-y-2">
         <H2>Contacto</H2>
-        <Titlehr/>
+        <Titlehr />
     </section>
 
     <!-- Contenido Principal -->
@@ -33,32 +36,66 @@ import Instagram from "../icons/instagram.astro";
                 <div class="flex justify-center space-x-6">
                     <a href="https://www.linkedin.com/in/joelarnaudcarreras/" 
                        class="text-carbon-500 hover:text-green-400 transition">
-                        <Linkedin class="w-6 h-6 inline-block"/>
+                        <Linkedin class="w-6 h-6 inline-block" />
                     </a>
                     <a href="https://www.instagram.com/sagiittarius24" 
                        class="text-carbon-500 hover:text-green-400 transition">
-                        <Instagram class="w-6 h-6 inline-block" style="fill: currentColor;"/>
+                        <Instagram class="w-6 h-6 inline-block" style="fill: currentColor;" />
                     </a>
                 </div>
             </div>
             
             <!-- Formulario -->
-            <form id="contact-form" method="post" class="space-y-6">
+            <form id="contact-form" class="space-y-6">
                 <div class="flex flex-col space-y-4 lg:flex-row lg:space-y-0 lg:space-x-4">
-                    <input type="text" name="name" placeholder="Nombre" required
-                           class="w-full py-3 px-4 border rounded-md text-carbon-700 focus:outline-none focus:ring-2 focus:ring-green-500">
-                    <input type="text" name="lastname" placeholder="Apellidos" required
-                           class="w-full py-3 px-4 border rounded-md text-carbon-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Nombre"
+                        required
+                        class="w-full py-3 px-4 border rounded-md text-carbon-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                    />
+                    <input
+                        type="text"
+                        name="lastname"
+                        placeholder="Apellidos"
+                        required
+                        class="w-full py-3 px-4 border rounded-md text-carbon-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                    />
                 </div>
-                <input type="email" name="email" placeholder="Correo" required
-                       class="w-full py-3 px-4 border rounded-md text-carbon-700 focus:outline-none focus:ring-2 focus:ring-green-500">
-                <textarea name="message" placeholder="Mensaje" rows="4"
-                          class="w-full py-3 px-4 border rounded-md text-carbon-700 focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Correo"
+                    required
+                    class="w-full py-3 px-4 border rounded-md text-carbon-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+                <textarea
+                    name="message"
+                    placeholder="Mensaje"
+                    rows="4"
+                    class="w-full py-3 px-4 border rounded-md text-carbon-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                ></textarea>
                 <div class="text-center">
-                    <Button1 variant="secondary" type="submit">Enviar</Button1>
+                    <Button1 id="submit-button" variant="secondary" type="submit">Enviar</Button1>
                 </div>
             </form>
             
+            <!-- Contenedor de notificaciones -->
+            <div id="notification-container"></div>
         </section>
     </div>
 </article>
+
+<script>
+    import { handleContactFormSubmit } from "../../api/contactFormHandler.js";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contact-form");
+        if (form) {
+            form.addEventListener("submit", handleContactFormSubmit);
+        } else {
+            console.error("Formulario no encontrado: Asegúrate de que el ID 'contact-form' esté correctamente asignado.");
+        }
+    });
+</script>
