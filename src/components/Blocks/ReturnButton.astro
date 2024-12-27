@@ -1,6 +1,6 @@
 <a 
     href="/" 
-    onclick="handleBack(event)" 
+    id="back-button" 
     class="fixed top-4 left-4 p-2 dark:bg-green-600 bg-gray-800 rounded-full text-white hover:text-gray-300 focus:ring-2 focus:ring-offset-2 focus:ring-white z-50"
     role="button" 
     aria-label="Volver a la página anterior"
@@ -25,12 +25,17 @@
 </a>
 
 <script>
-    function handleBack(event) {
-        event.preventDefault(); // Evita la navegación predeterminada del enlace
-        if (window.history.length > 1) {
-            window.history.back(); // Si hay historial previo, vuelve atrás
-        } else {
-            window.location.href = '/'; // Si no hay historial, redirige a la página principal
+    document.addEventListener('DOMContentLoaded', () => {
+        const backButton = document.querySelector('#back-button');
+        if (backButton) {
+            backButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                if (window.history.length > 1) {
+                    window.history.back();
+                } else {
+                    window.location.href = '/';
+                }
+            });
         }
-    }
+    });
 </script>
