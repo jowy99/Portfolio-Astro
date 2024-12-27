@@ -25,15 +25,15 @@ app.post("/send-email", async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "joelarnaudcarreras@gmail.com", // Cambia por tu correo de Gmail
-      pass: "yrlikbjcuwjmbqjv", // Cambia por tu contraseña de Gmail o contraseña de aplicación
+      user: "", // Cambia por tu correo de Gmail
+      pass: "", // Cambia por tu contraseña de Gmail o contraseña de aplicación
     },
   });
 
   // Contenido del correo
   const mailOptions = {
-    from: "joelarnaudcarreras@gmail.com", // Cambia por tu correo de Gmail
-    to: "joelarnaudcarreras@gmail.com", // Cambia por el correo donde recibirás los mensajes
+    from: "", // Cambia por tu correo de Gmail
+    to: "", // Cambia por el correo donde recibirás los mensajes
     subject: "Nueva solicitud de contacto",
     html: `
         <table style="width: 100%; max-width: 600px; font-family: Arial, sans-serif; background-color: #d7e0da; border-collapse: collapse;">
