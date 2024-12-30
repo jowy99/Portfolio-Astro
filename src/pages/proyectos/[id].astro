@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getCollection, render } from "astro:content";
+import { getCollection } from "astro:content";
 import ToolList from '../../components/Blocks/ToolList.astro';
 import StatusList from '../../components/Blocks/StatusList.astro';
 import ReturnButton from "../../components/Blocks/ReturnButton.astro";
@@ -25,7 +25,7 @@ const { title, imageUrl, projectUrl, webUrl } = data;
 const status = data.status || [];
 const tools = data.tools || [];
 
-const { Content } = await render(project);
+const { Content } = await project.render();
 console.log('DATA:', data);
 ---
 <Layout title={title}>
