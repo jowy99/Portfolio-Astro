@@ -6,6 +6,7 @@ const projects = defineCollection({
     title: z.string(),
     imageUrl: z.string(),
     projectUrl: z.string().url(),
+    featured: z.boolean().optional().default(false), // Valor predeterminado "false"
     webUrl: z.string().url().optional(),
     tools: z.array(z.string()).default([]), // Array vacío como valor predeterminado
     status: z.array(z.string()).default([]), // Array vacío como valor predeterminado

@@ -5,7 +5,7 @@ import { Image } from "astro:assets"
 const { title, description, imageUrl, projectUrl, url } = Astro.props;
 ---
 
-<article class="max-w-lg mx-auto rounded-lg shadow-xl overflow-hidden transition-transform transform hover:scale-105 h-full border border-gray-200 dark:border-gray-700 shadow-md">
+<article class="max-w-lg mx-auto rounded-lg shadow-xl overflow-hidden transition-transform transform hover:scale-105 h-full border border-gray-200 dark:border-gray-700">
   <a href={url} class="group relative w-full h-full">
       <img src={`/${imageUrl}`} 
            alt="Development projects image" 

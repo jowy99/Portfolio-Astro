@@ -10,7 +10,6 @@ export default defineConfig({
         'body-parser',
         'cors',
         'nodemailer',
-        // Agrega aquí otras dependencias que podrían estar causando el problema
       ],
     },
   },

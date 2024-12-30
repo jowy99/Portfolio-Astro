@@ -25,12 +25,12 @@ const sortedProjects = projects
         <main class="flex-grow grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {
             sortedProjects.map(project => {
-              const { slug, data } = project;
+              const { slug, data, body } = project;
               const { title, imageUrl, projectUrl } = data;
               return (
                   <ProjectCard
                     title={title}
-                    description={data.description}
+                    description={body}
                     imageUrl={imageUrl}
                     projectUrl={projectUrl}
                     url={`/proyectos/${slug}`}
